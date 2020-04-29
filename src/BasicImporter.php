@@ -17,12 +17,13 @@ class BasicImporter implements ToModel, WithValidation, WithHeadingRow
 
     protected $modelClass;
 
-    public function __construct($resource, $attributes, $rules, $modelClass)
+    public function __construct($resource, $attributes, $rules, $modelClass, $request)
     {
         $this->resource = $resource;
         $this->attributes = $attributes;
         $this->rules = $rules;
         $this->modelClass = $modelClass;
+        $this->request = $request;
     }
 
     public function model(array $row)
