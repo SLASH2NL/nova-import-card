@@ -80,8 +80,8 @@ export default {
                 )
                 .then(({ data }) => {
                     this.$toasted.success(data.message);
-                    this.$parent.$parent.$parent.$parent.getResources();
                     this.errors = null;
+                    window.location.reload();
                 })
                 .catch(({ response }) => {
                     if (response.data.danger) {
